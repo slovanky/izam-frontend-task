@@ -16,6 +16,37 @@
 
 body {
   /* color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif; */
+  background: var(--background); */
+  font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+}
+
+.transition-main {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+
+/* Side Filter Menu */
+
+.sidemenu-parent:has(label input[type="checkbox"]) {
+  &>ul.sidemenu-child-list {
+    visibility: hidden;
+    height: 0;
+  }
+
+  .chevron-down-icon {
+    @apply rotate-0 transition-main;
+  }
+}
+
+.sidemenu-parent:has(label input[type="checkbox"]:checked),
+.sidemenu-parent:has(label input[type="checkbox"]:disabled) {
+  &>.sidemenu-child-list {
+    visibility: visible;
+    height: auto;
+    @apply pt-3.5;
+  }
+
+  .chevron-down-icon {
+    @apply rotate-180;
+  }
 }
