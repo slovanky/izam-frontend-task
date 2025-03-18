@@ -25,7 +25,7 @@ body {
 }
 
 
-/* Side Filter Menu */
+/* Sidebar Menu */
 
 .sidemenu-parent:has(label input[type="checkbox"]) {
   .sidemenu-child-list {

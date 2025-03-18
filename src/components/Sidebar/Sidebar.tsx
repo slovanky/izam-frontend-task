@@ -6,12 +6,14 @@ import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, us
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis, restrictToParentElement } from "@dnd-kit/modifiers";
 
-import { SideFilterMenuItem } from "./SidebarMenu";
-import { BackIcon, CheckIcon, CloseIcon, SettingGearIcon } from "../common/Icons";
+import { SSidebarMenu } from "./SidebarMenu";
+import { BackIcon, CheckIcon, CloseIcon, SettingGearIcon } from "@/components/common/Icons";
 import { SidebarMenuItem } from "@/Types";
 
-export default function Sidebar(props: { onClose: () => void }) {
-  const { onClose } = props;
+import { useSidebarStore } from "@/stores/sidebarStore";
+
+export default function Sidebar() {
+  const { closeSidebar } = useSidebarStore();
 
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
 
@@ -130,20 +132,20 @@ export default function Sidebar(props: { onClose: () => void }) {
       <div className="h-[98px] px-[44px] py-[36px] flex items-center border-b border-[#E9E9E9]">
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <button onClick={onClose} className="lg:hidden">
+            <button onClick={closeSidebar} className="lg:hidden">
               <BackIcon className="w-[15px] h-[15px] aspect-square text-[#161616]" />
             </button>
-            <h3 className="text-[25px] text-[#404040] font-medium">Menu</h3>
+            <h3 className="text-[17px] lg:text-[25px] text-[#404040] font-medium">Menu</h3>
           </div>
 
           <div className="flex items-center gap-[9px]">
             {isEditMode ? (
               <>
                 <button onClick={() => setIsEditMode(false)}>
-                  <CloseIcon className="w-[42px] h-[42px] aspect-square text-[#ED1F03]" />
+                  <CloseIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#ED1F03]" />
                 </button>
                 <button onClick={() => setIsEditMode(false)}>
-                  <CheckIcon className="w-[42px] h-[42px] aspect-square text-[#3D8E41]" />
+                  <CheckIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#3D8E41]" />
                 </button>
               </>
             ) : (
@@ -158,7 +160,7 @@ export default function Sidebar(props: { onClose: () => void }) {
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis, restrictToParentElement]}>
           <SortableContext items={sideFilterMenuList} strategy={verticalListSortingStrategy}>
             {items.map((button, index) => (
-              <SideFilterMenuItem key={`sidemenu-button-${index}`} isEditMode={isEditMode} button={button} />
+              <SSidebarMenu key={`sidemenu-button-${index}`} isEditMode={isEditMode} button={button} />
             ))}
           </SortableContext>
         </DndContext>

@@ -13,7 +13,7 @@ type SidebarMenuProps = {
   button: SidebarMenuItem;
 };
 
-export function SideFilterMenuItem(props: SidebarMenuProps) {
+export function SSidebarMenu(props: SidebarMenuProps) {
   const { isEditMode, button } = props;
 
   const uniqueId = button.id;
@@ -29,20 +29,20 @@ export function SideFilterMenuItem(props: SidebarMenuProps) {
 
   return (
     <div ref={setNodeRef} className="sidemenu-parent mb-3.5" style={style}>
-      <label className="w-full h-[65px] flex items-center justify-between gap-3 px-[30px] bg-[#F7F7F7] rounded">
+      <label className="w-full flex items-center justify-between gap-3 px-[27px] lg:px-[30px] py-4 lg:py-5 bg-[#F7F7F7] rounded">
         <div className="grow flex items-center gap-x-1.5 text-[#404040]">
           {isEditMode && (
             <>
               <div {...attributes} {...listeners} className={` ${isCursorGrabbing ? "cursor-grabbing" : "cursor-grab"}`} aria-describedby={`DndContext-${uniqueId}`}>
-                <DragBtnIcon className="w-[30px] h-[30px] aspect-square cursor-move" />
+                <DragBtnIcon className="shrink-0 h-5 lg:h-[30px] aspect-square cursor-move" />
               </div>
             </>
           )}
 
           {isEditMode || button.childs.length > 0 ? (
-            <span className="grow text-2xl font-medium">{button.title}</span>
+            <span className="grow text-[17px] lg:text-2xl font-medium">{button.title}</span>
           ) : (
-            <Link href={button.href} target={button.target} className="grow text-2xl font-medium">
+            <Link href={button.href} target={button.target} className="grow text-[17px] lg:text-2xl font-medium">
               {button.title}
             </Link>
           )}
@@ -50,14 +50,14 @@ export function SideFilterMenuItem(props: SidebarMenuProps) {
         <div className="flex items-center gap-x-2.5 text-[#848484]">
           {isEditMode ? (
             <>
-              <EditIcon className="w-[25px] h-[25px] aspect-square cursor-pointer" />
+              <EditIcon className="shrink-0 h-5 lg:h-[25px] aspect-square cursor-pointer" />
               {button.visible ? (
                 <>
-                  <VisibleIcon className="w-[25px] h-auto cursor-pointer" />
+                  <VisibleIcon className="shrink-0 w-5 lg:w-[25px] h-auto cursor-pointer" />
                 </>
               ) : (
                 <>
-                  <HiddenIcon className="w-[25px] h-[25px] aspect-square cursor-pointer" />
+                  <HiddenIcon className="shrink-0 h-5 lg:h-[25px] aspect-square cursor-pointer" />
                 </>
               )}
             </>

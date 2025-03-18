@@ -76,18 +76,22 @@ export function SubmenuItem(props: SubmenuItemProps) {
   const isCursorGrabbing = attributes["aria-pressed"];
 
   return (
-    <div ref={setNodeRef} className={`w-full h-[52px] flex items-center justify-between ps-[50px] pe-[30px] ${!childButton.visible && !isEditMode && "hidden"}`} style={style}>
+    <div
+      ref={setNodeRef}
+      className={`w-full flex items-center justify-between ps-[40px] lg:ps-[50px] pe-[27px] lg:pe-[30px] py-3.5 ${!childButton.visible && !isEditMode && "hidden"}`}
+      style={style}
+    >
       <div className={`flex items-center gap-x-1.5 ${childButton.visible ? "text-[#404040]" : "text-[#CDCDCD]"}`}>
         {isEditMode ? (
           <>
             <div {...attributes} {...listeners} className={` ${isCursorGrabbing ? "cursor-grabbing" : "cursor-grab"}`} aria-describedby={`DndContext-${uniqueId}`}>
-              <DragBtnIcon className="w-[30px] h-[30px] aspect-square cursor-move" />
+              <DragBtnIcon className="shrink-0 h-5 lg:h-[30px] aspect-square cursor-pointer" />
             </div>
 
-            <div className="text-[22px] font-normal">{childButton.title}</div>
+            <div className="text-[17px] lg:text-[22px] font-normal">{childButton.title}</div>
           </>
         ) : (
-          <Link href={childButton.href} target={childButton.target} className="text-[22px] font-normal">
+          <Link href={childButton.href} target={childButton.target} className="text-[17px] lg:text-[22px] font-normal">
             {childButton.title}
           </Link>
         )}
@@ -95,14 +99,14 @@ export function SubmenuItem(props: SubmenuItemProps) {
       <div className="flex items-center gap-x-2.5 text-[#848484]">
         {isEditMode && (
           <>
-            <EditIcon className="w-[25px] h-[25px] aspect-square cursor-pointer" />
+            <EditIcon className="shrink-0 h-5 lg:h-[25px] aspect-square cursor-pointer" />
             {childButton.visible ? (
               <>
-                <VisibleIcon className="w-[25px] h-auto cursor-pointer" />
+                <VisibleIcon className="shrink-0 w-5 lg:w-[25px] h-auto cursor-pointer" />
               </>
             ) : (
               <>
-                <HiddenIcon className="w-[25px] h-[25px] aspect-square cursor-pointer" />
+                <HiddenIcon className="shrink-0 h-5 lg:h-[25px] aspect-square cursor-pointer" />
               </>
             )}
           </>
