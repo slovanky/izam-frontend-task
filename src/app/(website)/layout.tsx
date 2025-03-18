@@ -19,7 +19,7 @@ export default function WebsiteLayout({
         {/* Side Filter Menu */}
         <div
           className={`
-          shrink-0 fixed lg:static top-0 bottom-0 right-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-screen overflow-y-auto transition-main
+          z-[99] shrink-0 fixed lg:static top-0 bottom-0 right-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-screen overflow-y-auto transition-main
           ${isOpen ? "left-0" : "-left-[100%]"}
           `}
         >
