@@ -1,8 +1,9 @@
 "use client";
 
-import { MenuIcon } from "@/components/common/Icons";
-import SideFilterMenu from "../components/SideFilterMenu";
 import { useState } from "react";
+
+import Sidebar from "../components/Sidebar/Sidebar";
+import { MenuIcon } from "@/components/common/Icons";
 
 export default function JobsPage() {
   const [sideFilterMenuIsOpen, setSideFilterMenuIsOpen] = useState<boolean>(false);
@@ -20,7 +21,7 @@ export default function JobsPage() {
           ${sideFilterMenuIsOpen ? "left-0" : "-left-[100%]"}
           `}
         >
-          <SideFilterMenu onClose={() => setSideFilterMenuIsOpen(false)} />
+          <Sidebar onClose={() => setSideFilterMenuIsOpen(false)} />
         </div>
 
         {/* Jobs Page Content */}

@@ -28,7 +28,7 @@ body {
 /* Side Filter Menu */
 
 .sidemenu-parent:has(label input[type="checkbox"]) {
-  &>ul.sidemenu-child-list {
+  .sidemenu-child-list {
     visibility: hidden;
     height: 0;
   }
@@ -40,7 +40,7 @@ body {
 
 .sidemenu-parent:has(label input[type="checkbox"]:checked),
 .sidemenu-parent:has(label input[type="checkbox"]:disabled) {
-  &>.sidemenu-child-list {
+  .sidemenu-child-list {
     visibility: visible;
     height: auto;
     @apply pt-3.5;
