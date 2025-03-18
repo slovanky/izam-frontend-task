@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "./common/Icons";
 
 export default function SortingDropdown() {
-  const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(true);
+  const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
 
   const optionList = ["Top match", "Newest", "Most recent"];
 
