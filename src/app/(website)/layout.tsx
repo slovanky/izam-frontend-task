@@ -29,7 +29,7 @@ export default function WebsiteLayout({
         </div>
 
         {/* Page Content */}
-        <div className="grow px-[21px] lg:px-[24px] 2xl:pe-20 py-[26px] lg:py-[36px]">{children}</div>
+        <div className="grow px-[21px] lg:px-[24px] xl:pe-20 py-[26px] lg:py-[36px]">{children}</div>
       </div>
     </div>
   );
