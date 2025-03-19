@@ -12,10 +12,42 @@ import { SidebarMenuItem } from "@/Types";
 
 import { useSidebarStore } from "@/stores/sidebarStore";
 
+import { fetchSidebarData } from "@/utils/sidebar";
+
 export default function Sidebar() {
   const { closeSidebar } = useSidebarStore();
 
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
+
+  const [items, setItems] = useState<SidebarMenuItem[]>([]);
+
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setLoading(true);
+        setError(null);
+        console.log("Fetching sidebar data...");
+
+        // Then try the utility function
+        const sidebarData = await fetchSidebarData();
+        setItems(sidebarData);
+        console.log("Sidebar data:", sidebarData);
+
+        setData(sidebarData);
+      } catch (err: any) {
+        console.error("Error:", err);
+        setError(err.message || "Unknown error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -23,92 +55,6 @@ export default function Sidebar() {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
-
-  const sideFilterMenuList: SidebarMenuItem[] = [
-    {
-      id: "1",
-      title: "Dashboard",
-      href: "/",
-      target: "",
-      visible: true,
-      childs: [],
-    },
-
-    {
-      id: "2",
-      title: "Job Application",
-      href: "/",
-      target: "",
-      visible: true,
-      childs: [
-        {
-          id: "123",
-          title: "John Doe",
-          href: "/",
-          target: "",
-          visible: true,
-        },
-        {
-          id: "124",
-          title: "James Bond",
-          href: "/",
-          target: "",
-          visible: true,
-        },
-        {
-          id: "125",
-          title: "Scarlet Joe",
-          href: "/",
-          target: "",
-          visible: false,
-        },
-      ],
-    },
-
-    {
-      id: "3",
-      title: "Qualifications",
-      href: "/",
-      target: "",
-      visible: true,
-      childs: [
-        {
-          id: "126",
-          title: "Child 1",
-          href: "/",
-          target: "",
-          visible: true,
-        },
-        {
-          id: "127",
-          title: "Child 2",
-          href: "/",
-          target: "",
-          visible: true,
-        },
-      ],
-    },
-
-    {
-      id: "4",
-      title: "About",
-      href: "/",
-      target: "",
-      visible: true,
-      childs: [],
-    },
-
-    {
-      id: "5",
-      title: "Contact",
-      href: "/",
-      target: "",
-      visible: true,
-      childs: [],
-    },
-  ];
-
-  const [items, setItems] = useState<SidebarMenuItem[]>(sideFilterMenuList);
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
@@ -158,7 +104,7 @@ export default function Sidebar() {
       </div>
       <div className="px-[14px] py-[32px]">
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis, restrictToParentElement]}>
-          <SortableContext items={sideFilterMenuList} strategy={verticalListSortingStrategy}>
+          <SortableContext items={items} strategy={verticalListSortingStrategy}>
             {items.map((button, index) => (
               <SSidebarMenu key={`sidemenu-button-${index}`} isEditMode={isEditMode} button={button} />
             ))}

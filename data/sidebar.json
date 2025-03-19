@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "title": "Dashboard",
+    "href": "/",
+    "target": "",
+    "visible": true,
+    "childs": []
+  },
+  {
+    "id": "2",
+    "title": "Job Application",
+    "href": "/",
+    "target": "",
+    "visible": true,
+    "childs": [
+      {
+        "id": "123",
+        "title": "John Doe",
+        "href": "/",
+        "target": "",
+        "visible": true,
+        "childs": []
+      },
+      {
+        "id": "124",
+        "title": "James Bond",
+        "href": "/",
+        "target": "",
+        "visible": true,
+        "childs": []
+      },
+      {
+        "id": "125",
+        "title": "Scarlet Joe",
+        "href": "/",
+        "target": "",
+        "visible": false,
+        "childs": []
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Qualifications",
+    "href": "/",
+    "target": "",
+    "visible": true,
+    "childs": [
+      {
+        "id": "126",
+        "title": "Child 1",
+        "href": "/",
+        "target": "",
+        "visible": true
+      },
+      {
+        "id": "127",
+        "title": "Child 2",
+        "href": "/",
+        "target": "",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "About",
+    "href": "/",
+    "target": "",
+    "visible": true,
+    "childs": []
+  },
+  {
+    "id": "5",
+    "title": "Contact",
+    "href": "/",
+    "target": "",
+    "visible": true,
+    "childs": []
+  }
+]
