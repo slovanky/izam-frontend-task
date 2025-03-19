@@ -16,7 +16,7 @@ export default function Navbar() {
 
         {/* Left area */}
         <Link href={`/`} className="flex items-center gap-x-[46px]">
-          <Image src="/img/logo.svg" width={81} height={27} alt="IZAM Logo" className="shrink-0 h-[18px] lg:h-[27px] w-auto" />
+          <Image src="/img/logo.svg" width={82} height={28} alt="IZAM Logo" className="shrink-0 h-[18px] lg:h-[27px] w-auto" />
         </Link>
 
         {/* Right area */}

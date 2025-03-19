@@ -12,6 +12,7 @@
       "IT / Software development"
     ],
     "postedDate": "2025-03-01T00:00:00Z",
+    "featured": true,
     "logoUrl": "/img/company/egabi.png"
   },
   {
@@ -26,7 +27,8 @@
       "IT / Software development"
     ],
     "postedDate": "2025-03-05T00:00:00Z",
-    "logoUrl": "/img/company/techsphere.png"
+    "featured": false,
+    "logoUrl": "/img/company/m.png"
   },
   {
     "id": "job003",
@@ -41,7 +43,8 @@
       "IT / Software development"
     ],
     "postedDate": "2025-03-10T00:00:00Z",
-    "logoUrl": "/img/company/innovatecorp.png"
+    "featured": false,
+    "logoUrl": "/img/company/rock.png"
   },
   {
     "id": "job004",
@@ -55,7 +58,8 @@
       "Creative / Design"
     ],
     "postedDate": "2025-03-15T00:00:00Z",
-    "logoUrl": "/img/company/creativeminds.png"
+    "featured": false,
+    "logoUrl": "/img/company/egabi.png"
   },
   {
     "id": "job005",
@@ -70,7 +74,8 @@
       "Infrastructure"
     ],
     "postedDate": "2025-03-03T00:00:00Z",
-    "logoUrl": "/img/company/cloudtech.png"
+    "featured": false,
+    "logoUrl": "/img/company/m.png"
   },
   {
     "id": "job006",
@@ -85,7 +90,8 @@
       "Marketing / Communications"
     ],
     "postedDate": "2025-03-07T00:00:00Z",
-    "logoUrl": "/img/company/mediapulse.png"
+    "featured": false,
+    "logoUrl": "/img/company/rock.png"
   },
   {
     "id": "job007",
@@ -100,7 +106,8 @@
       "Mobile Development"
     ],
     "postedDate": "2025-03-12T00:00:00Z",
-    "logoUrl": "/img/company/appgenius.png"
+    "featured": false,
+    "logoUrl": "/img/company/egabi.png"
   },
   {
     "id": "job008",
@@ -115,6 +122,7 @@
       "Data Science"
     ],
     "postedDate": "2025-03-08T00:00:00Z",
-    "logoUrl": "/img/company/datadriven.png"
+    "featured": false,
+    "logoUrl": "/img/company/m.png"
   }
 ]

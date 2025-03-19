@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import moment from "moment";
+
 import { CalendarIcon, HeartIcon, LocationIcon } from "../common/Icons";
 
 import { JobType } from "@/Types";
-import moment from "moment";
 
 type JobProps = {
   job: JobType;
@@ -14,12 +15,12 @@ export default function Job(props: JobProps) {
   const { job } = props;
 
   return (
-    <div className="py-3 lg:py-8 bg-white text-[#707070] border border-[#F0F0F0] rounded-[5px]">
+    <div className={`py-3 lg:py-8 text-[#707070] border rounded-[5px] ${!job.featured ? "bg-white border-[#F0F0F0]" : "bg-[#F3FDF3] border-[#48A74C]"}`}>
       <div className="px-4 lg:px-10 space-y-2 lg:space-y-[18px]">
         <div className="flex items-start justify-between gap-2">
           <div className="grow flex items-center gap-x-[7px] lg:gap-x-[22px]">
             <Link href="/">
-              <Image src="/img/company/egabi.png" width={70} height={70} alt="Company logo" className="w-[32px] lg:w-[70px] aspect-square" />
+              <Image src={job.logoUrl} width={70} height={70} alt="Company logo" className="w-[32px] lg:w-[70px] aspect-square" />
             </Link>
             <div className="space-y-1 lg:space-y-2">
               <Link href="/" className="block text-[14px] lg:text-[25px] text-[#161616] font-medium">
@@ -47,10 +48,10 @@ export default function Job(props: JobProps) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-stretch gap-x-1">
-          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 bg-[#F7F7F7] text-[9px] lg:text-base font-medium rounded">{job.experience}</div>
-          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 bg-[#F7F7F7] text-[9px] lg:text-base font-medium rounded">{job.type}</div>
-          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 bg-[#F7F7F7] text-[9px] lg:text-base font-medium rounded">{job.workMode}</div>
+        <div className={`flex flex-wrap items-stretch gap-x-1 ${!job.featured ? "[&>div]:bg-[#F7F7F7]" : "[&>div]:bg-white"}`}>
+          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 text-[9px] lg:text-base font-medium rounded">{job.experience}</div>
+          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 text-[9px] lg:text-base font-medium rounded">{job.type}</div>
+          <div className="px-2 lg:px-[18px] py-0.5 lg:py-1 text-[9px] lg:text-base font-medium rounded">{job.workMode}</div>
         </div>
       </div>
 
@@ -59,10 +60,10 @@ export default function Job(props: JobProps) {
       <div className="px-4 lg:px-10">
         <p className="flex items-center gap-x-2.5 text-[10px] lg:text-[17px]">
           {job.categories.map((category, idx) => (
-            <>
+            <span key={`job-${job.id}-cat-${idx}`}>
               <span>{category}</span>
               {idx + 1 < job.categories.length && <span>-</span>}
-            </>
+            </span>
           ))}
         </p>
       </div>

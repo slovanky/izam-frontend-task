@@ -21,4 +21,5 @@ export type JobType = {
   categories: string[];
   postedDate: string;
   logoUrl: string;
+  featured: boolean;
 }
