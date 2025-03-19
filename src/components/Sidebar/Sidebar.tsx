@@ -39,7 +39,7 @@ export default function Sidebar() {
         console.log("Sidebar data:", sidebarData);
 
         // setData(sidebarData);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Error:", err);
         // setError(err.message || "Unknown error");
       } finally {
