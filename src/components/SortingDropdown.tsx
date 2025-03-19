@@ -26,8 +26,12 @@ export default function SortingDropdown() {
     };
   }, [menuElRef]);
 
+  useEffect(() => {
+    setDropdownIsOpen(false);
+  }, [currentOption]);
+
   return (
-    <div ref={menuElRef} className="relative">
+    <div ref={menuElRef} className="relative hidden lg:block">
       <div
         onClick={() => setDropdownIsOpen(!dropdownIsOpen)}
         className={`w-[310px] px-[26px] py-[19px] flex items-center justify-between gap-3 border rounded-t-[5px] transition-main
@@ -41,7 +45,7 @@ export default function SortingDropdown() {
         </div>
       </div>
       {dropdownIsOpen && (
-        <div className="absolute left-0 top-full right-0 bg-white border border-t-0 border-[#D8D8D8] rounded-b-[11px] overflow-hidden">
+        <div className="z-[99] absolute left-0 top-full right-0 bg-white border border-t-0 border-[#D8D8D8] rounded-b-[11px] overflow-hidden">
           <ul>
             {optionList.map((item, index) => (
               <li key={`sorting-item-${index}`}>

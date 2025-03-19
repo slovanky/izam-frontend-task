@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
@@ -38,10 +38,6 @@ export function SideFilterMenuSubitems(props: SidebarMenuProps) {
       });
     }
   };
-
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
 
   return (
     <div className="sidemenu-child-list space-y-3.5">

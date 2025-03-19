@@ -10,36 +10,51 @@ import { SidebarMenu } from "./SidebarMenu";
 import { BackIcon, CheckIcon, CloseIcon, SettingGearIcon } from "@/components/common/Icons";
 
 import { useSidebarStore } from "@/stores/sidebarStore";
-import { fetchSidebarData } from "@/utils/sidebar";
+import { fetchSidebarData, updateSidebarData } from "@/utils/sidebar";
 import { SidebarMenuItem } from "@/Types";
 
 export default function Sidebar() {
   const { closeSidebar } = useSidebarStore();
 
   const [sidebarList, setSidebarList] = useState<SidebarMenuItem[]>([]);
+  // const [sidebarListFromAPI, setSidebarListFromAPI] = useState<SidebarMenuItem[]>([]);
 
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setIsLoading(true);
-        console.log("Fetching sidebar data...");
+  async function loadSidebarData() {
+    try {
+      setIsLoading(true);
+      console.log("Fetching sidebar data...");
 
-        const sidebarData = await fetchSidebarData();
-        setSidebarList(sidebarData);
+      const sidebarData = await fetchSidebarData();
+      setSidebarList(sidebarData);
+      // setSidebarListFromAPI(sidebarData);
 
-        console.log("Sidebar data:", sidebarData);
-      } catch (err: unknown) {
-        console.error("Error:", err);
-      } finally {
-        setIsLoading(false);
-      }
+      console.log("Sidebar data:", sidebarData);
+    } catch (err: unknown) {
+      console.error("Error:", err);
+    } finally {
+      setIsLoading(false);
     }
+  }
 
-    loadData();
+  useEffect(() => {
+    loadSidebarData();
   }, []);
+
+  const onEditCanceling = () => {
+    loadSidebarData();
+    setIsEditMode(false);
+  };
+
+  const onEditSubmitting = async () => {
+    console.log(sidebarList);
+
+    await updateSidebarData(sidebarList);
+    loadSidebarData();
+    setIsEditMode(false);
+  };
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -77,12 +92,12 @@ export default function Sidebar() {
           <div className="flex items-center gap-[9px]">
             {isEditMode ? (
               <>
-                {/* Close button */}
-                <button onClick={() => setIsEditMode(false)}>
+                {/* Cancel button */}
+                <button onClick={() => onEditCanceling()}>
                   <CloseIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#ED1F03]" />
                 </button>
                 {/* Save button */}
-                <button onClick={() => setIsEditMode(false)}>
+                <button onClick={() => onEditSubmitting()}>
                   <CheckIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#3D8E41]" />
                 </button>
               </>
