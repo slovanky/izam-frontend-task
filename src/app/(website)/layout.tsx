@@ -1,6 +1,8 @@
 "use client";
 
+import Navbar from "@/components/Navbar/Navbar";
 import Sidebar from "@/components/Sidebar/Sidebar";
+
 import { useSidebarStore } from "@/stores/sidebarStore";
 
 export default function WebsiteLayout({
@@ -13,7 +15,7 @@ export default function WebsiteLayout({
   return (
     <div className="min-h-screen flex flex-col">
       {/* Top Navbar */}
-      <div className="w-full h-[86px] lg:h-[98px] flex items-center justify-center bg-[#161616] text-gray-500">Top Nav Here</div>
+      <Navbar />
 
       <div className="grow flex items-start">
         {/* Sidebar Menu */}
@@ -27,7 +29,7 @@ export default function WebsiteLayout({
         </div>
 
         {/* Page Content */}
-        <div className="grow px-[21px] lg:px-[24px] py-[26px] lg:py-[36px]">{children}</div>
+        <div className="grow px-[21px] lg:px-[24px] 2xl:pe-20 py-[26px] lg:py-[36px]">{children}</div>
       </div>
     </div>
   );

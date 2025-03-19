@@ -156,3 +156,25 @@ export function BackIcon({ className }: { className: string }) {
     </svg>
   );
 }
+
+// Chevron right Icon
+export function ChevronRightIcon({ className }: { className: string }) {
+  return (
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path
+        d="M0.0235205 1.57499L1.08452 0.514986L6.86352 6.29199C6.95667 6.38455 7.0306 6.49463 7.08105 6.61588C7.1315 6.73713 7.15747 6.86716 7.15747 6.99849C7.15747 7.12981 7.1315 7.25984 7.08105 7.38109C7.0306 7.50234 6.95667 7.61242 6.86352 7.70499L1.08452 13.485L0.0245204 12.425L5.44852 6.99999L0.0235205 1.57499Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+// Caret Down Icon
+export function CaretDownIcon({ className }: { className: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 9c.852 0 1.297 .986 .783 1.623l-.076 .084l-6 6a1 1 0 0 1 -1.32 .083l-.094 -.083l-6 -6l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057v-.118l.005 -.058l.009 -.06l.01 -.052l.032 -.108l.027 -.067l.07 -.132l.065 -.09l.073 -.081l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01l.057 -.004l12.059 -.002z" />
+    </svg>
+  );
+}
