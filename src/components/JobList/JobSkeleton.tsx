@@ -12,7 +12,7 @@ export default function JobSkeleton() {
             </div>
           </div>
 
-          <button className="shrink-0 w-[25px] lg:w-[55px] h-[25px] lg:h-[55px] aspect-square bg-gray-100 rounded-full"></button>
+          <div className="shrink-0 w-[25px] lg:w-[55px] h-[25px] lg:h-[55px] aspect-square bg-gray-100 rounded-full"></div>
         </div>
 
         <div className="h-4 lg:h-[32px] w-2/5 bg-gray-100 rounded"></div>

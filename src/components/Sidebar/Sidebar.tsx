@@ -97,7 +97,7 @@ export default function Sidebar() {
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* Back button */}
-            <button onClick={closeSidebar} className="lg:hidden">
+            <button onClick={closeSidebar} className="lg:hidden" aria-label="Back">
               <BackIcon className="w-[15px] h-[15px] aspect-square text-[#161616]" />
             </button>
 
@@ -108,11 +108,11 @@ export default function Sidebar() {
             {isEditMode ? (
               <>
                 {/* Cancel button */}
-                <button onClick={() => onEditCanceling()}>
+                <button onClick={() => onEditCanceling()} aria-label="Cancel">
                   <CloseIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#ED1F03]" />
                 </button>
                 {/* Save button */}
-                <button onClick={() => onEditSubmitting()}>
+                <button onClick={() => onEditSubmitting()} aria-label="Submit">
                   <CheckIcon className="shrink-0 h-[34px] lg:h-[42px] aspect-square text-[#3D8E41]" />
                 </button>
               </>
@@ -121,6 +121,7 @@ export default function Sidebar() {
               <button
                 onClick={() => !isLoading && setIsEditMode(true)}
                 className={`transition-main ${!isLoading ? "opacity-100 cursor-pointer" : "opacity-40 cursor-not-allowed"}`}
+                aria-label="Setting"
               >
                 <SettingGearIcon className="w-[30px] h-[30px] aspect-square text-black" />
               </button>

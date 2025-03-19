@@ -29,7 +29,7 @@ export default function ProfileMenu() {
   return (
     <div ref={menuElRef} className="relative">
       {/* Button */}
-      <button onClick={() => setMenuIsOpen(!menuIsOpen)} className="flex flex-col items-center gap-y-1.5">
+      <button onClick={() => setMenuIsOpen(!menuIsOpen)} className="flex flex-col items-center gap-y-1.5" aria-label="Menu">
         <Image src="/img/avatar.png" width={30} height={30} alt="Profile picture" />
         <div className="flex items-center justify-center gap-x-1 text-center">
           <span className="text-lg">Profile</span>

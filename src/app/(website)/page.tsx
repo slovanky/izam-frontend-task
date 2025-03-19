@@ -33,7 +33,7 @@ export default function JobsPage() {
           </div>
         </div>
 
-        <button onClick={openSidebar} className="shrink-0 lg:hidden w-[57px] flex items-center justify-center bg-white border border-[#F0F0F0] rounded-[2px]">
+        <button onClick={openSidebar} className="shrink-0 lg:hidden w-[57px] flex items-center justify-center bg-white border border-[#F0F0F0] rounded-[2px]" aria-label="Menu">
           <MenuIcon className="w-[24px] h-[24px] aspect-square" />
         </button>
       </div>

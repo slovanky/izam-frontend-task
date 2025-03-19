@@ -32,7 +32,10 @@ export default function Job(props: JobProps) {
             </div>
           </div>
 
-          <button className="shrink-0 w-[25px] lg:w-[55px] h-[25px] lg:h-[55px] aspect-square flex items-center justify-center text-[#C4C3C3] hover:text-black bg-white border border-[#C4C3C3] hover:border-black rounded-full transition-main">
+          <button
+            className="shrink-0 w-[25px] lg:w-[55px] h-[25px] lg:h-[55px] aspect-square flex items-center justify-center text-[#C4C3C3] hover:text-black bg-white border border-[#C4C3C3] hover:border-black rounded-full transition-main"
+            aria-label="Favorite"
+          >
             <HeartIcon className="w-[11px] lg:w-[22px] aspect-square" />
           </button>
         </div>

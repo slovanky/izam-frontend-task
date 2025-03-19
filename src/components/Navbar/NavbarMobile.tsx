@@ -31,7 +31,11 @@ export default function NavbarMobile() {
       {navbarMobileIsOpen && <div className="z-[998] fixed top-0 left-0 bottom-0 right-0 w-screen h-screen bg-black/90 backdrop-blur-sm"></div>}
 
       <div ref={menuElRef}>
-        <button onClick={() => setNavbarMobileIsOpen(!navbarMobileIsOpen)} className="relative shrink-0 w-[46px] h-[46px] aspect-square flex items-center justify-center">
+        <button
+          onClick={() => setNavbarMobileIsOpen(!navbarMobileIsOpen)}
+          className="relative shrink-0 w-[46px] h-[46px] aspect-square flex items-center justify-center"
+          aria-label="Menu"
+        >
           <Image src="/img/avatar.png" width={41} height={41} alt="Profile picture" />
           <span className="absolute bottom-0 right-0 shrink-0 w-5 h-5 aspect-square flex items-center justify-center bg-[#F0F0F0] rounded-full">
             <MenuIcon className="w-3 h-3 aspect-square text-[#707070]" />
