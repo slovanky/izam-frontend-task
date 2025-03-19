@@ -27,7 +27,7 @@ export default function JobsPage() {
             <span>Set alert</span>
 
             <label className="inline-flex items-center cursor-pointer">
-              <input type="checkbox" value="" className="sr-only peer" />
+              <input type="checkbox" value="" className="sr-only peer" aria-label="Alert" />
               <div className="relative w-11 h-6 bg-[#C4C3C3]/50 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-black/10 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C4C3C3]/50"></div>
             </label>
           </div>
