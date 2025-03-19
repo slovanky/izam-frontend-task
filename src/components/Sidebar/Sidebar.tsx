@@ -21,28 +21,29 @@ export default function Sidebar() {
 
   const [items, setItems] = useState<SidebarMenuItem[]>([]);
 
-  const [data, setData] = useState<any>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  // const [data, setData] = useState<any>(null);
+  // const [error, setError] = useState<string | null>(null);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadData() {
       try {
-        setLoading(true);
-        setError(null);
+        // setLoading(true);
+        // setError(null);
         console.log("Fetching sidebar data...");
 
         // Then try the utility function
         const sidebarData = await fetchSidebarData();
         setItems(sidebarData);
+
         console.log("Sidebar data:", sidebarData);
 
-        setData(sidebarData);
+        // setData(sidebarData);
       } catch (err: any) {
         console.error("Error:", err);
-        setError(err.message || "Unknown error");
+        // setError(err.message || "Unknown error");
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     }
 
