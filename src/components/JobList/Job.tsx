@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CalendarIcon, HeartIcon, LocationIcon } from "../common/Icons";
 
 import { JobType } from "@/Types";
+import moment from "moment";
 
 type JobProps = {
   job: JobType;
@@ -42,7 +43,7 @@ export default function Job(props: JobProps) {
           </div>
           <div className="flex items-center gap-x-1.5">
             <CalendarIcon className="shrink-0 w-[8px] lg:w-[18px] h-[8px] lg:h-[18px] aspect-square" />
-            <span className="text-[11px] lg:text-[17px]">{job.postedDate}</span>
+            <span className="text-[11px] lg:text-[17px]">{moment(job.postedDate).fromNow()}</span>
           </div>
         </div>
 
@@ -57,10 +58,10 @@ export default function Job(props: JobProps) {
 
       <div className="px-4 lg:px-10">
         <p className="flex items-center gap-x-2.5 text-[10px] lg:text-[17px]">
-          {job.categories.map((category, index) => (
+          {job.categories.map((category, idx) => (
             <>
               <span>{category}</span>
-              <span>-</span>
+              {idx + 1 < job.categories.length && <span>-</span>}
             </>
           ))}
         </p>
