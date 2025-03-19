@@ -9,3 +9,7 @@ export type SidebarSubmenuItem = {
 export type SidebarMenuItem = SidebarSubmenuItem & {
   childs: SidebarSubmenuItem[];
 };
+
+export type Job = {
+  title: string;
+}

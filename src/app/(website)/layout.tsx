@@ -17,11 +17,11 @@ export default function WebsiteLayout({
       {/* Top Navbar */}
       <Navbar />
 
-      <div className="grow flex items-start">
+      <div className="grow flex items-stretch">
         {/* Sidebar Menu */}
         <div
           className={`
-          z-[99] shrink-0 fixed lg:static top-0 bottom-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-screen overflow-y-auto transition-main
+          z-[99] shrink-0 fixed lg:static top-0 bottom-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-auto overflow-y-auto transition-main
           ${isOpen ? "right-0" : "-right-[100%]"}
           `}
         >

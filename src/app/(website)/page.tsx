@@ -1,6 +1,7 @@
 "use client";
 
 import { MenuIcon } from "@/components/common/Icons";
+import JobList from "@/components/JobList/JobList";
 import SortingDropdown from "@/components/SortingDropdown";
 
 import { useSidebarStore } from "@/stores/sidebarStore";
@@ -36,6 +37,9 @@ export default function JobsPage() {
           <MenuIcon className="w-[24px] h-[24px] aspect-square" />
         </button>
       </div>
+
+      {/* Job list */}
+      <JobList />
     </>
   );
 }

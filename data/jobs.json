@@ -1,0 +1,177 @@
+[
+  {
+    "id": "job001",
+    "title": "Senior Software Engineer",
+    "company": "TechInnovate Solutions",
+    "location": "San Francisco, CA",
+    "type": "Full-time",
+    "category": "Technology",
+    "salary": "$120,000 - $150,000",
+    "description": "We are seeking an experienced Software Engineer to join our team. The ideal candidate will have expertise in developing scalable applications and working with modern frameworks.",
+    "requirements": [
+      "5+ years of experience in software development",
+      "Proficiency in JavaScript, React, and Node.js",
+      "Experience with cloud platforms (AWS, Azure, or GCP)",
+      "Strong problem-solving abilities and attention to detail"
+    ],
+    "benefits": [
+      "Health, dental, and vision insurance",
+      "401(k) matching",
+      "Flexible work arrangements",
+      "Professional development opportunities"
+    ],
+    "postedDate": "2025-03-10T08:00:00Z",
+    "applicationDeadline": "2025-04-10T23:59:59Z",
+    "contactEmail": "careers@techinnovate.com"
+  },
+  {
+    "id": "job002",
+    "title": "Marketing Manager",
+    "company": "Global Brands Inc.",
+    "location": "New York, NY",
+    "type": "Full-time",
+    "category": "Marketing",
+    "salary": "$85,000 - $110,000",
+    "description": "Global Brands Inc. is looking for a creative and strategic Marketing Manager to lead our marketing initiatives and drive brand growth.",
+    "requirements": [
+      "Bachelor's degree in Marketing or related field",
+      "3+ years of marketing experience",
+      "Strong communication and project management skills",
+      "Experience with digital marketing campaigns and analytics"
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Health insurance",
+      "Paid time off",
+      "Annual performance bonus"
+    ],
+    "postedDate": "2025-03-05T10:30:00Z",
+    "applicationDeadline": "2025-04-05T23:59:59Z",
+    "contactEmail": "hr@globalbrands.com"
+  },
+  {
+    "id": "job003",
+    "title": "Registered Nurse",
+    "company": "Sunshine Medical Center",
+    "location": "Chicago, IL",
+    "type": "Part-time",
+    "category": "Healthcare",
+    "salary": "$35 - $45 per hour",
+    "description": "Sunshine Medical Center is hiring Registered Nurses for our expanding pediatric department. Join our team of dedicated healthcare professionals.",
+    "requirements": [
+      "Valid RN license",
+      "BLS certification",
+      "1+ year of nursing experience",
+      "Excellent patient care skills"
+    ],
+    "benefits": [
+      "Flexible scheduling",
+      "Health benefits",
+      "Continuing education assistance",
+      "Career advancement opportunities"
+    ],
+    "postedDate": "2025-03-12T14:15:00Z",
+    "applicationDeadline": "2025-04-30T23:59:59Z",
+    "contactEmail": "nursing@sunshinemedical.com"
+  },
+  {
+    "id": "job004",
+    "title": "Data Scientist",
+    "company": "AnalyticsPro",
+    "location": "Remote",
+    "type": "Contract",
+    "category": "Data Science",
+    "salary": "$50 - $70 per hour",
+    "description": "AnalyticsPro is seeking a Data Scientist to work on a 6-month project analyzing customer behavior patterns and developing predictive models.",
+    "requirements": [
+      "Master's degree in Statistics, Data Science, or related field",
+      "Experience with Python, R, and SQL",
+      "Knowledge of machine learning algorithms",
+      "Strong data visualization skills"
+    ],
+    "benefits": [
+      "Flexible work hours",
+      "Remote work environment",
+      "Performance bonuses",
+      "Opportunity for contract extension"
+    ],
+    "postedDate": "2025-03-08T09:45:00Z",
+    "applicationDeadline": "2025-03-31T23:59:59Z",
+    "contactEmail": "talent@analyticspro.com"
+  },
+  {
+    "id": "job005",
+    "title": "Restaurant Manager",
+    "company": "Coastal Cuisine",
+    "location": "Miami, FL",
+    "type": "Full-time",
+    "category": "Hospitality",
+    "salary": "$55,000 - $65,000",
+    "description": "Coastal Cuisine is looking for an experienced Restaurant Manager to oversee daily operations and ensure exceptional dining experiences for our guests.",
+    "requirements": [
+      "3+ years of restaurant management experience",
+      "Food safety certification",
+      "Strong leadership and customer service skills",
+      "Ability to work evenings and weekends"
+    ],
+    "benefits": [
+      "Health insurance",
+      "Paid vacation",
+      "Employee meals",
+      "Career growth opportunities"
+    ],
+    "postedDate": "2025-03-15T11:20:00Z",
+    "applicationDeadline": "2025-04-15T23:59:59Z",
+    "contactEmail": "jobs@coastalcuisine.com"
+  },
+  {
+    "id": "job006",
+    "title": "Graphic Designer",
+    "company": "Creative Concepts Studio",
+    "location": "Portland, OR",
+    "type": "Freelance",
+    "category": "Design",
+    "salary": "$30 - $50 per hour",
+    "description": "Creative Concepts Studio is seeking a talented Graphic Designer for project-based work creating visual content for various clients.",
+    "requirements": [
+      "Bachelor's degree in Graphic Design or related field",
+      "Proficiency in Adobe Creative Suite",
+      "Strong portfolio demonstrating design skills",
+      "Ability to meet deadlines and work independently"
+    ],
+    "benefits": [
+      "Flexible schedule",
+      "Remote work options",
+      "Networking opportunities",
+      "Portfolio development"
+    ],
+    "postedDate": "2025-03-02T13:00:00Z",
+    "applicationDeadline": "2025-03-25T23:59:59Z",
+    "contactEmail": "design@creativeconcepts.com"
+  },
+  {
+    "id": "job007",
+    "title": "Elementary School Teacher",
+    "company": "Oakwood Academy",
+    "location": "Austin, TX",
+    "type": "Full-time",
+    "category": "Education",
+    "salary": "$48,000 - $60,000",
+    "description": "Oakwood Academy is hiring certified Elementary School Teachers for the upcoming academic year. Join our supportive and innovative learning environment.",
+    "requirements": [
+      "Bachelor's degree in Education",
+      "Valid teaching certification",
+      "Experience working with elementary-aged children",
+      "Strong classroom management skills"
+    ],
+    "benefits": [
+      "Comprehensive health benefits",
+      "School breaks and holidays off",
+      "Retirement plan",
+      "Professional development support"
+    ],
+    "postedDate": "2025-03-18T10:00:00Z",
+    "applicationDeadline": "2025-05-15T23:59:59Z",
+    "contactEmail": "recruitment@oakwoodacademy.edu"
+  }
+]
