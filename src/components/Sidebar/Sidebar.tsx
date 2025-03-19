@@ -39,20 +39,37 @@ export default function Sidebar() {
     }
   }
 
+  async function submitSidebarData() {
+    try {
+      setIsLoading(true);
+      console.log("Updating sidebar data...");
+
+      const sidebarData = await updateSidebarData(sidebarList);
+
+      console.log(sidebarData);
+    } catch (err: unknown) {
+      console.error("Error:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   useEffect(() => {
     loadSidebarData();
   }, []);
 
   const onEditCanceling = () => {
     loadSidebarData();
+
+    // close editing mode
     setIsEditMode(false);
   };
 
-  const onEditSubmitting = async () => {
-    console.log(sidebarList);
-
-    await updateSidebarData(sidebarList);
+  const onEditSubmitting = () => {
+    submitSidebarData();
     loadSidebarData();
+
+    // close editing mode
     setIsEditMode(false);
   };
 
