@@ -17,7 +17,6 @@ export default function Sidebar() {
   const { closeSidebar } = useSidebarStore();
 
   const [sidebarList, setSidebarList] = useState<SidebarMenuItem[]>([]);
-  // const [sidebarListFromAPI, setSidebarListFromAPI] = useState<SidebarMenuItem[]>([]);
 
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +28,6 @@ export default function Sidebar() {
 
       const sidebarData = await fetchSidebarData();
       setSidebarList(sidebarData);
-      // setSidebarListFromAPI(sidebarData);
 
       console.log("Sidebar data:", sidebarData);
     } catch (err: unknown) {
