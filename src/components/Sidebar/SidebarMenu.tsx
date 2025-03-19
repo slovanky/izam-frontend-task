@@ -13,7 +13,7 @@ type SidebarMenuProps = {
   button: SidebarMenuItem;
 };
 
-export function SSidebarMenu(props: SidebarMenuProps) {
+export function SidebarMenu(props: SidebarMenuProps) {
   const { isEditMode, button } = props;
 
   const uniqueId = button.id;

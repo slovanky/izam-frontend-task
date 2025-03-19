@@ -1,9 +1,6 @@
-// utils/sidebar.ts
 import { SidebarMenuItem } from "@/Types";
 
-/**
- * Fetch sidebar data from the API
- */
+// Fetch sidebar data from the API
 export async function fetchSidebarData(): Promise<SidebarMenuItem[]> {
   try {
     // Make sure to use the correct API path
@@ -25,9 +22,7 @@ export async function fetchSidebarData(): Promise<SidebarMenuItem[]> {
   }
 }
 
-/**
- * Update sidebar data through the API
- */
+// Update sidebar data through the API
 export async function updateSidebarData(data: SidebarMenuItem[]): Promise<{ message: string }> {
   try {
     const response = await fetch('/api/sidebar', {
@@ -48,40 +43,3 @@ export async function updateSidebarData(data: SidebarMenuItem[]): Promise<{ mess
     throw error;
   }
 }
-
-/**
- * Find a menu item by ID (recursive search)
- */
-// export function findMenuItemById(items: SidebarMenuItem[], id: string): SidebarMenuItem | null {
-//   for (const item of items) {
-//     if (item.id === id) {
-//       return item;
-//     }
-
-//     if (item.childs && item.childs.length > 0) {
-//       const found = findMenuItemById(item.childs, id);
-//       if (found) {
-//         return found;
-//       }
-//     }
-//   }
-
-//   return null;
-// }
-
-/**
- * Toggle visibility of a menu item
- */
-// export function toggleMenuItemVisibility(items: SidebarMenuItem[], id: string): SidebarMenuItem[] {
-//   return items.map(item => {
-//     if (item.id === id) {
-//       return { ...item, visible: !item.visible };
-//     }
-
-//     if (item.childs && item.childs.length > 0) {
-//       return { ...item, childs: toggleMenuItemVisibility(item.childs, id) };
-//     }
-
-//     return item;
-//   });
-// }

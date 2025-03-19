@@ -12,14 +12,14 @@ export default function WebsiteLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Top Nav */}
+      {/* Top Navbar */}
       <div className="w-full h-[86px] lg:h-[98px] flex items-center justify-center bg-[#161616] text-gray-500">Top Nav Here</div>
 
       <div className="grow flex items-start">
-        {/* Side Filter Menu */}
+        {/* Sidebar Menu */}
         <div
           className={`
-          z-[99] shrink-0 fixed lg:static top-0 bottom-0 right-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-screen overflow-y-auto transition-main
+          z-[99] shrink-0 fixed lg:static top-0 bottom-0 w-screen lg:w-[380px] 2xl:w-[440px] min-h-screen lg:h-screen overflow-y-auto transition-main
           ${isOpen ? "right-0" : "-right-[100%]"}
           `}
         >
