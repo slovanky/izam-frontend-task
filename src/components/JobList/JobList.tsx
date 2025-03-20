@@ -48,7 +48,7 @@ export default function JobList() {
   return (
     <div>
       <div className="py-[11px] lg:py-[27px]">
-        <ul className="space-y-[7px] lg:space-yy-[14px]">
+        <ul className="space-y-[7px] lg:space-y-[14px]">
           {!isLoading ? (
             <>
               {/* Job list */}
